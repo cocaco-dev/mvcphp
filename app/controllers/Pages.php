@@ -5,7 +5,9 @@ class Pages extends Controller{
 			
 	}
 	public function index(){
-
+		if(isLoggedIn()){
+			redirect('posts');
+		}
 		$data = ['title' => 'Welcome'];
      
 		$this->view('pages/index',$data);
